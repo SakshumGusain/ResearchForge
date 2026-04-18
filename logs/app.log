@@ -1,0 +1,561 @@
+2026-04-18 17:34:56,140 | DEBUG | chromadb.config | Starting component System
+2026-04-18 17:34:56,140 | DEBUG | chromadb.config | Starting component Posthog
+2026-04-18 17:35:31,097 | INFO | Request | Received research request: topic=how to live a long and happy life, depth=Scan.quick
+2026-04-18 17:35:31,110 | INFO | Supervisor | Routing to: Researcher(reason: no research data)
+2026-04-18 17:35:31,111 | INFO | Researcher | Starting research on topic: how to live a long and happy life
+2026-04-18 17:35:43,629 | DEBUG | httpcore.connection | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-04-18 17:35:44,479 | DEBUG | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002A5FFECE390>
+2026-04-18 17:35:44,482 | DEBUG | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x000002A5FFD62650> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-04-18 17:35:45,079 | DEBUG | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002A5FFECE2D0>
+2026-04-18 17:35:45,080 | DEBUG | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-04-18 17:35:45,080 | DEBUG | httpcore.http11 | send_request_headers.complete
+2026-04-18 17:35:45,080 | DEBUG | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-04-18 17:35:45,080 | DEBUG | httpcore.http11 | send_request_body.complete
+2026-04-18 17:35:45,080 | DEBUG | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-04-18 17:35:47,210 | DEBUG | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'X-Gemini-Service-Tier', b'standard'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Encoding', b'gzip'), (b'Date', b'Sat, 18 Apr 2026 12:05:46 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=1637'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-04-18 17:35:47,210 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-04-18 17:35:47,210 | DEBUG | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-04-18 17:35:47,211 | DEBUG | httpcore.http11 | receive_response_body.complete
+2026-04-18 17:35:47,211 | DEBUG | httpcore.http11 | response_closed.started
+2026-04-18 17:35:47,211 | DEBUG | httpcore.http11 | response_closed.complete
+2026-04-18 17:35:47,212 | DEBUG | Researcher | LLM response has 2 tool calls
+2026-04-18 17:35:47,212 | DEBUG | Researcher | Research continue check: 1 data points, routing to tools
+2026-04-18 17:35:47,214 | INFO | Tools | LLM requested for web_search tool
+2026-04-18 17:35:47,215 | INFO | Tools | LLM requested for knowledge_base_search tool
+2026-04-18 17:35:47,217 | DEBUG | httpcore.connection | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-04-18 17:35:47,218 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): api.tavily.com:443
+2026-04-18 17:35:48,256 | DEBUG | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002A5FFECFE60>
+2026-04-18 17:35:48,256 | DEBUG | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x000002A5FED45DD0> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-04-18 17:35:48,940 | DEBUG | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002A5FFECFD70>
+2026-04-18 17:35:48,940 | DEBUG | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-04-18 17:35:48,940 | DEBUG | httpcore.http11 | send_request_headers.complete
+2026-04-18 17:35:48,940 | DEBUG | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-04-18 17:35:48,941 | DEBUG | httpcore.http11 | send_request_body.complete
+2026-04-18 17:35:48,941 | DEBUG | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-04-18 17:35:49,790 | DEBUG | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=UTF-8'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Encoding', b'gzip'), (b'Date', b'Sat, 18 Apr 2026 12:05:48 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=463'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-04-18 17:35:49,790 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-2-preview:batchEmbedContents "HTTP/1.1 200 OK"
+2026-04-18 17:35:49,790 | DEBUG | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-04-18 17:35:49,836 | DEBUG | httpcore.http11 | receive_response_body.complete
+2026-04-18 17:35:49,836 | DEBUG | httpcore.http11 | response_closed.started
+2026-04-18 17:35:49,836 | DEBUG | httpcore.http11 | response_closed.complete
+2026-04-18 17:35:49,843 | INFO | Tools | No data found in knowledge_base_search tool call
+2026-04-18 17:35:50,295 | DEBUG | urllib3.connectionpool | https://api.tavily.com:443 "POST /search HTTP/1.1" 200 2291
+2026-04-18 17:35:50,297 | INFO | Tools | web_search tool call successful
+2026-04-18 17:35:50,298 | INFO | Researcher | Starting research on topic: how to live a long and happy life
+2026-04-18 17:35:56,307 | DEBUG | httpcore.connection | close.started
+2026-04-18 17:35:56,308 | DEBUG | httpcore.connection | close.complete
+2026-04-18 17:35:56,308 | DEBUG | httpcore.connection | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-04-18 17:35:56,452 | DEBUG | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002A5FFECE6C0>
+2026-04-18 17:35:56,452 | DEBUG | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x000002A5FFD62650> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-04-18 17:35:57,835 | DEBUG | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002A5FFECFF50>
+2026-04-18 17:35:57,835 | DEBUG | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-04-18 17:35:57,836 | DEBUG | httpcore.http11 | send_request_headers.complete
+2026-04-18 17:35:57,836 | DEBUG | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-04-18 17:35:57,836 | DEBUG | httpcore.http11 | send_request_body.complete
+2026-04-18 17:35:57,836 | DEBUG | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-04-18 17:36:00,298 | DEBUG | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'X-Gemini-Service-Tier', b'standard'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Encoding', b'gzip'), (b'Date', b'Sat, 18 Apr 2026 12:05:59 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=1744'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-04-18 17:36:00,298 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-04-18 17:36:00,298 | DEBUG | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-04-18 17:36:00,298 | DEBUG | httpcore.http11 | receive_response_body.complete
+2026-04-18 17:36:00,298 | DEBUG | httpcore.http11 | response_closed.started
+2026-04-18 17:36:00,298 | DEBUG | httpcore.http11 | response_closed.complete
+2026-04-18 17:36:00,299 | DEBUG | Researcher | LLM response has 2 tool calls
+2026-04-18 17:36:00,300 | INFO | Supervisor | Routing to: Analyst(reason: research done, no analysis)
+2026-04-18 17:36:00,301 | INFO | Analyst | Analysing research data (4 sources)
+2026-04-18 17:36:12,814 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-18 17:36:12,817 | DEBUG | httpcore.connection | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-04-18 17:36:12,893 | DEBUG | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002A5FFEFC6E0>
+2026-04-18 17:36:12,893 | DEBUG | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x000002A5F813BE50> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-04-18 17:36:14,397 | DEBUG | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002A5FFECF140>
+2026-04-18 17:36:14,398 | DEBUG | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-04-18 17:36:14,398 | DEBUG | httpcore.http11 | send_request_headers.complete
+2026-04-18 17:36:14,398 | DEBUG | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-04-18 17:36:14,399 | DEBUG | httpcore.http11 | send_request_body.complete
+2026-04-18 17:36:14,399 | DEBUG | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-04-18 17:36:18,673 | DEBUG | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'X-Gemini-Service-Tier', b'standard'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Encoding', b'gzip'), (b'Date', b'Sat, 18 Apr 2026 12:06:17 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=3412'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-04-18 17:36:18,673 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-04-18 17:36:18,673 | DEBUG | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-04-18 17:36:18,674 | DEBUG | httpcore.http11 | receive_response_body.complete
+2026-04-18 17:36:18,674 | DEBUG | httpcore.http11 | response_closed.started
+2026-04-18 17:36:18,674 | DEBUG | httpcore.http11 | response_closed.complete
+2026-04-18 17:36:18,675 | INFO | Analyst | Analysis complete (2199 chars)
+2026-04-18 17:36:18,676 | INFO | Supervisor | Routing to: Writer(reason: analysis done, no draft)
+2026-04-18 17:36:18,676 | INFO | Writer | Writing first draft
+2026-04-18 17:36:31,191 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-18 17:36:31,194 | DEBUG | httpcore.connection | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-04-18 17:36:31,224 | DEBUG | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002A5FFEFDAC0>
+2026-04-18 17:36:31,224 | DEBUG | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x000002A5FFD63BD0> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-04-18 17:36:31,458 | DEBUG | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002A5FFEFD9D0>
+2026-04-18 17:36:31,458 | DEBUG | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-04-18 17:36:31,459 | DEBUG | httpcore.http11 | send_request_headers.complete
+2026-04-18 17:36:31,459 | DEBUG | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-04-18 17:36:31,460 | DEBUG | httpcore.http11 | send_request_body.complete
+2026-04-18 17:36:31,460 | DEBUG | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-04-18 17:36:40,209 | DEBUG | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'X-Gemini-Service-Tier', b'standard'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Encoding', b'gzip'), (b'Date', b'Sat, 18 Apr 2026 12:06:39 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=8696'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-04-18 17:36:40,209 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-04-18 17:36:40,209 | DEBUG | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-04-18 17:36:40,213 | DEBUG | httpcore.http11 | receive_response_body.complete
+2026-04-18 17:36:40,213 | DEBUG | httpcore.http11 | response_closed.started
+2026-04-18 17:36:40,213 | DEBUG | httpcore.http11 | response_closed.complete
+2026-04-18 17:36:40,214 | INFO | Writer | Draft complete (5688 chars)
+2026-04-18 17:36:40,215 | INFO | Supervisor | Routing to: Reviewer(reason: draft exists, no review)
+2026-04-18 17:36:52,729 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-18 17:36:52,733 | DEBUG | httpcore.connection | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-04-18 17:36:54,520 | DEBUG | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002A5FFEFEE40>
+2026-04-18 17:36:54,520 | DEBUG | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x000002A5FFD95150> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-04-18 17:36:56,614 | DEBUG | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002A5FFEFED50>
+2026-04-18 17:36:56,615 | DEBUG | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-04-18 17:36:56,615 | DEBUG | httpcore.http11 | send_request_headers.complete
+2026-04-18 17:36:56,615 | DEBUG | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-04-18 17:36:56,616 | DEBUG | httpcore.http11 | send_request_body.complete
+2026-04-18 17:36:56,616 | DEBUG | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-04-18 17:37:01,913 | DEBUG | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'X-Gemini-Service-Tier', b'standard'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Encoding', b'gzip'), (b'Date', b'Sat, 18 Apr 2026 12:07:01 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=4256'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-04-18 17:37:01,913 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+2026-04-18 17:37:01,914 | DEBUG | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-04-18 17:37:01,916 | DEBUG | httpcore.http11 | receive_response_body.complete
+2026-04-18 17:37:01,916 | DEBUG | httpcore.http11 | response_closed.started
+2026-04-18 17:37:01,916 | DEBUG | httpcore.http11 | response_closed.complete
+2026-04-18 17:37:01,918 | INFO | Reviewer | Status: APPROVED (iteration: 2)
+2026-04-18 17:37:01,918 | INFO | Reviewer | Final report ready
+2026-04-18 17:37:01,919 | INFO | Supervisor | Routing to: END(reason: approved)
+2026-04-18 17:37:01,921 | INFO | Request | Final report is generated successfully
+2026-04-18 17:37:01,923 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=0,level=0,tokens=0), 0, 53, False
+2026-04-18 17:37:01,923 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=0,level=0,tokens=0), 0, 53, False
+2026-04-18 17:37:01,924 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=0,level=0,tokens=0), 0, 53, False
+2026-04-18 17:37:01,924 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=0,level=0,tokens=0), 0, 53, False
+2026-04-18 17:37:01,924 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=0,level=0,tokens=0), 0, 53, False
+2026-04-18 17:37:01,924 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=0,level=0,tokens=0), 0, 53, False
+2026-04-18 17:37:01,924 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=0,level=0,tokens=0), 0, 53, False
+2026-04-18 17:37:01,924 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=0,level=0,tokens=0), 0, 53, False
+2026-04-18 17:37:01,924 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=2,level=0,tokens=3), 2, 53, False
+2026-04-18 17:37:01,924 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=2,level=0,tokens=3), 2, 53, False
+2026-04-18 17:37:01,924 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=2,level=0,tokens=3), 2, 53, False
+2026-04-18 17:37:01,924 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=2,level=0,tokens=3), 2, 53, False
+2026-04-18 17:37:01,924 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=2,level=0,tokens=3), 2, 53, False
+2026-04-18 17:37:01,924 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=2,level=0,tokens=3), 2, 53, False
+2026-04-18 17:37:01,924 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=2,level=0,tokens=3), 2, 53, False
+2026-04-18 17:37:01,924 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=2,level=0,tokens=3), 2, 53, False
+2026-04-18 17:37:01,924 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=4,level=0,tokens=6), 4, 53, False
+2026-04-18 17:37:01,924 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=4,level=0,tokens=6), 4, 53, False
+2026-04-18 17:37:01,924 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=4,level=0,tokens=6), 4, 53, False
+2026-04-18 17:37:01,924 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=4,level=0,tokens=6), 4, 53, False
+2026-04-18 17:37:01,925 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=4,level=0,tokens=6), 4, 53, False
+2026-04-18 17:37:01,925 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=4,level=0,tokens=6), 4, 53, False
+2026-04-18 17:37:01,925 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=4,level=0,tokens=6), 4, 53, False
+2026-04-18 17:37:01,925 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=4,level=0,tokens=6), 4, 53, False
+2026-04-18 17:37:01,925 | DEBUG | markdown_it.rules_block.lheading | entering lheading: StateBlock(line=4,level=0,tokens=6), 4, 53, False
+2026-04-18 17:37:01,925 | DEBUG | markdown_it.rules_block.paragraph | entering paragraph: StateBlock(line=4,level=0,tokens=6), 4, 53, False
+2026-04-18 17:37:01,925 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=6,level=0,tokens=9), 6, 53, False
+2026-04-18 17:37:01,925 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=6,level=0,tokens=9), 6, 53, False
+2026-04-18 17:37:01,925 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=6,level=0,tokens=9), 6, 53, False
+2026-04-18 17:37:01,925 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=6,level=0,tokens=9), 6, 53, False
+2026-04-18 17:37:01,925 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=6,level=0,tokens=9), 6, 53, False
+2026-04-18 17:37:01,925 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=6,level=0,tokens=9), 6, 53, False
+2026-04-18 17:37:01,925 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=6,level=0,tokens=9), 6, 53, False
+2026-04-18 17:37:01,925 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=6,level=0,tokens=9), 6, 53, False
+2026-04-18 17:37:01,925 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=8,level=0,tokens=12), 8, 53, False
+2026-04-18 17:37:01,925 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=8,level=0,tokens=12), 8, 53, False
+2026-04-18 17:37:01,925 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=8,level=0,tokens=12), 8, 53, False
+2026-04-18 17:37:01,925 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=8,level=0,tokens=12), 8, 53, False
+2026-04-18 17:37:01,925 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=8,level=0,tokens=12), 8, 53, False
+2026-04-18 17:37:01,925 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=8,level=0,tokens=12), 8, 53, False
+2026-04-18 17:37:01,925 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=8,level=0,tokens=12), 8, 53, False
+2026-04-18 17:37:01,925 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=8,level=0,tokens=12), 8, 53, False
+2026-04-18 17:37:01,925 | DEBUG | markdown_it.rules_block.lheading | entering lheading: StateBlock(line=8,level=0,tokens=12), 8, 53, False
+2026-04-18 17:37:01,926 | DEBUG | markdown_it.rules_block.paragraph | entering paragraph: StateBlock(line=8,level=0,tokens=12), 8, 53, False
+2026-04-18 17:37:01,926 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=10,level=0,tokens=15), 10, 53, False
+2026-04-18 17:37:01,926 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=10,level=0,tokens=15), 10, 53, False
+2026-04-18 17:37:01,926 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=10,level=0,tokens=15), 10, 53, False
+2026-04-18 17:37:01,926 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=10,level=0,tokens=15), 10, 53, False
+2026-04-18 17:37:01,926 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=10,level=0,tokens=15), 10, 53, False
+2026-04-18 17:37:01,926 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=10,level=2,tokens=17), 10, 53, False
+2026-04-18 17:37:01,926 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=10,level=2,tokens=17), 10, 53, False
+2026-04-18 17:37:01,926 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=10,level=2,tokens=17), 10, 53, False
+2026-04-18 17:37:01,926 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=10,level=2,tokens=17), 10, 53, False
+2026-04-18 17:37:01,926 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=10,level=2,tokens=17), 10, 53, False
+2026-04-18 17:37:01,926 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=10,level=2,tokens=17), 10, 53, False
+2026-04-18 17:37:01,926 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=10,level=2,tokens=17), 10, 53, False
+2026-04-18 17:37:01,926 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=10,level=2,tokens=17), 10, 53, False
+2026-04-18 17:37:01,926 | DEBUG | markdown_it.rules_block.lheading | entering lheading: StateBlock(line=10,level=2,tokens=17), 10, 53, False
+2026-04-18 17:37:01,926 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=10,level=2,tokens=17), 11, 53, True
+2026-04-18 17:37:01,926 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=10,level=2,tokens=17), 11, 53, True
+2026-04-18 17:37:01,926 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=10,level=2,tokens=17), 11, 53, True
+2026-04-18 17:37:01,926 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=10,level=2,tokens=17), 11, 53, True
+2026-04-18 17:37:01,926 | DEBUG | markdown_it.rules_block.paragraph | entering paragraph: StateBlock(line=10,level=2,tokens=17), 10, 53, False
+2026-04-18 17:37:01,926 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=10,level=2,tokens=17), 11, 53, True
+2026-04-18 17:37:01,926 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=10,level=2,tokens=17), 11, 53, True
+2026-04-18 17:37:01,927 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=10,level=2,tokens=17), 11, 53, True
+2026-04-18 17:37:01,927 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=10,level=2,tokens=17), 11, 53, True
+2026-04-18 17:37:01,927 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=11,level=1,tokens=21), 11, 53, True
+2026-04-18 17:37:01,927 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=11,level=1,tokens=21), 11, 53, True
+2026-04-18 17:37:01,927 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=11,level=1,tokens=21), 11, 53, True
+2026-04-18 17:37:01,927 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=11,level=2,tokens=22), 11, 53, False
+2026-04-18 17:37:01,927 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=11,level=2,tokens=22), 11, 53, False
+2026-04-18 17:37:01,927 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=11,level=2,tokens=22), 11, 53, False
+2026-04-18 17:37:01,927 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=11,level=2,tokens=22), 11, 53, False
+2026-04-18 17:37:01,927 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=11,level=2,tokens=22), 11, 53, False
+2026-04-18 17:37:01,927 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=11,level=2,tokens=22), 11, 53, False
+2026-04-18 17:37:01,927 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=11,level=2,tokens=22), 11, 53, False
+2026-04-18 17:37:01,927 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=11,level=2,tokens=22), 11, 53, False
+2026-04-18 17:37:01,927 | DEBUG | markdown_it.rules_block.lheading | entering lheading: StateBlock(line=11,level=2,tokens=22), 11, 53, False
+2026-04-18 17:37:01,927 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=11,level=2,tokens=22), 12, 53, True
+2026-04-18 17:37:01,927 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=11,level=2,tokens=22), 12, 53, True
+2026-04-18 17:37:01,927 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=11,level=2,tokens=22), 12, 53, True
+2026-04-18 17:37:01,927 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=11,level=2,tokens=22), 12, 53, True
+2026-04-18 17:37:01,927 | DEBUG | markdown_it.rules_block.paragraph | entering paragraph: StateBlock(line=11,level=2,tokens=22), 11, 53, False
+2026-04-18 17:37:01,927 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=11,level=2,tokens=22), 12, 53, True
+2026-04-18 17:37:01,927 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=11,level=2,tokens=22), 12, 53, True
+2026-04-18 17:37:01,927 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=11,level=2,tokens=22), 12, 53, True
+2026-04-18 17:37:01,927 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=11,level=2,tokens=22), 12, 53, True
+2026-04-18 17:37:01,927 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=12,level=1,tokens=26), 12, 53, True
+2026-04-18 17:37:01,928 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=12,level=1,tokens=26), 12, 53, True
+2026-04-18 17:37:01,928 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=12,level=1,tokens=26), 12, 53, True
+2026-04-18 17:37:01,928 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=12,level=2,tokens=27), 12, 53, False
+2026-04-18 17:37:01,928 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=12,level=2,tokens=27), 12, 53, False
+2026-04-18 17:37:01,928 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=12,level=2,tokens=27), 12, 53, False
+2026-04-18 17:37:01,928 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=12,level=2,tokens=27), 12, 53, False
+2026-04-18 17:37:01,928 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=12,level=2,tokens=27), 12, 53, False
+2026-04-18 17:37:01,928 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=12,level=2,tokens=27), 12, 53, False
+2026-04-18 17:37:01,928 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=12,level=2,tokens=27), 12, 53, False
+2026-04-18 17:37:01,928 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=12,level=2,tokens=27), 12, 53, False
+2026-04-18 17:37:01,928 | DEBUG | markdown_it.rules_block.lheading | entering lheading: StateBlock(line=12,level=2,tokens=27), 12, 53, False
+2026-04-18 17:37:01,928 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=12,level=2,tokens=27), 13, 53, True
+2026-04-18 17:37:01,928 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=12,level=2,tokens=27), 13, 53, True
+2026-04-18 17:37:01,928 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=12,level=2,tokens=27), 13, 53, True
+2026-04-18 17:37:01,928 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=12,level=2,tokens=27), 13, 53, True
+2026-04-18 17:37:01,928 | DEBUG | markdown_it.rules_block.paragraph | entering paragraph: StateBlock(line=12,level=2,tokens=27), 12, 53, False
+2026-04-18 17:37:01,928 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=12,level=2,tokens=27), 13, 53, True
+2026-04-18 17:37:01,928 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=12,level=2,tokens=27), 13, 53, True
+2026-04-18 17:37:01,928 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=12,level=2,tokens=27), 13, 53, True
+2026-04-18 17:37:01,928 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=12,level=2,tokens=27), 13, 53, True
+2026-04-18 17:37:01,928 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=13,level=1,tokens=31), 13, 53, True
+2026-04-18 17:37:01,928 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=13,level=1,tokens=31), 13, 53, True
+2026-04-18 17:37:01,928 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=13,level=1,tokens=31), 13, 53, True
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=13,level=2,tokens=32), 13, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=13,level=2,tokens=32), 13, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=13,level=2,tokens=32), 13, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=13,level=2,tokens=32), 13, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=13,level=2,tokens=32), 13, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=13,level=2,tokens=32), 13, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=13,level=2,tokens=32), 13, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=13,level=2,tokens=32), 13, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.lheading | entering lheading: StateBlock(line=13,level=2,tokens=32), 13, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.paragraph | entering paragraph: StateBlock(line=13,level=2,tokens=32), 13, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=15,level=1,tokens=36), 15, 53, True
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=15,level=1,tokens=36), 15, 53, True
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=15,level=1,tokens=36), 15, 53, True
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=15,level=0,tokens=37), 15, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=15,level=0,tokens=37), 15, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=15,level=0,tokens=37), 15, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=15,level=0,tokens=37), 15, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=15,level=0,tokens=37), 15, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=15,level=0,tokens=37), 15, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=15,level=0,tokens=37), 15, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=15,level=0,tokens=37), 15, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=17,level=0,tokens=40), 17, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=17,level=0,tokens=40), 17, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=17,level=0,tokens=40), 17, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=17,level=0,tokens=40), 17, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=17,level=0,tokens=40), 17, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=17,level=0,tokens=40), 17, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=17,level=0,tokens=40), 17, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=17,level=0,tokens=40), 17, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=19,level=0,tokens=43), 19, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=19,level=0,tokens=43), 19, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=19,level=0,tokens=43), 19, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=19,level=0,tokens=43), 19, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=19,level=0,tokens=43), 19, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=19,level=0,tokens=43), 19, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=19,level=0,tokens=43), 19, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=19,level=0,tokens=43), 19, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.lheading | entering lheading: StateBlock(line=19,level=0,tokens=43), 19, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.paragraph | entering paragraph: StateBlock(line=19,level=0,tokens=43), 19, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=21,level=0,tokens=46), 21, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=21,level=0,tokens=46), 21, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=21,level=0,tokens=46), 21, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=21,level=0,tokens=46), 21, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=21,level=0,tokens=46), 21, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=21,level=0,tokens=46), 21, 53, False
+2026-04-18 17:37:01,929 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=21,level=0,tokens=46), 21, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=21,level=0,tokens=46), 21, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=23,level=0,tokens=49), 23, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=23,level=0,tokens=49), 23, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=23,level=0,tokens=49), 23, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=23,level=0,tokens=49), 23, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=23,level=0,tokens=49), 23, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=23,level=0,tokens=49), 23, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=23,level=0,tokens=49), 23, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=23,level=0,tokens=49), 23, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.lheading | entering lheading: StateBlock(line=23,level=0,tokens=49), 23, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.paragraph | entering paragraph: StateBlock(line=23,level=0,tokens=49), 23, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=25,level=0,tokens=52), 25, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=25,level=0,tokens=52), 25, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=25,level=0,tokens=52), 25, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=25,level=0,tokens=52), 25, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=25,level=0,tokens=52), 25, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=25,level=0,tokens=52), 25, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=25,level=0,tokens=52), 25, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=25,level=0,tokens=52), 25, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=27,level=0,tokens=55), 27, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=27,level=0,tokens=55), 27, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=27,level=0,tokens=55), 27, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=27,level=0,tokens=55), 27, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=27,level=0,tokens=55), 27, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=27,level=0,tokens=55), 27, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=27,level=0,tokens=55), 27, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=27,level=0,tokens=55), 27, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.lheading | entering lheading: StateBlock(line=27,level=0,tokens=55), 27, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.paragraph | entering paragraph: StateBlock(line=27,level=0,tokens=55), 27, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=29,level=0,tokens=58), 29, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=29,level=0,tokens=58), 29, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=29,level=0,tokens=58), 29, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=29,level=0,tokens=58), 29, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=29,level=0,tokens=58), 29, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=29,level=0,tokens=58), 29, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=29,level=0,tokens=58), 29, 53, False
+2026-04-18 17:37:01,930 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=29,level=0,tokens=58), 29, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=31,level=0,tokens=61), 31, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=31,level=0,tokens=61), 31, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=31,level=0,tokens=61), 31, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=31,level=0,tokens=61), 31, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=31,level=0,tokens=61), 31, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=31,level=0,tokens=61), 31, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=31,level=0,tokens=61), 31, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=31,level=0,tokens=61), 31, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.lheading | entering lheading: StateBlock(line=31,level=0,tokens=61), 31, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.paragraph | entering paragraph: StateBlock(line=31,level=0,tokens=61), 31, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=33,level=0,tokens=64), 33, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=33,level=0,tokens=64), 33, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=33,level=0,tokens=64), 33, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=33,level=0,tokens=64), 33, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=33,level=0,tokens=64), 33, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=33,level=0,tokens=64), 33, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=33,level=0,tokens=64), 33, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=33,level=0,tokens=64), 33, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=35,level=0,tokens=67), 35, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=35,level=0,tokens=67), 35, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=35,level=0,tokens=67), 35, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=35,level=0,tokens=67), 35, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=35,level=0,tokens=67), 35, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=35,level=0,tokens=67), 35, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=35,level=0,tokens=67), 35, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=35,level=0,tokens=67), 35, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.lheading | entering lheading: StateBlock(line=35,level=0,tokens=67), 35, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.paragraph | entering paragraph: StateBlock(line=35,level=0,tokens=67), 35, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=37,level=0,tokens=70), 37, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=37,level=0,tokens=70), 37, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=37,level=0,tokens=70), 37, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=37,level=0,tokens=70), 37, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=37,level=0,tokens=70), 37, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=37,level=2,tokens=72), 37, 53, False
+2026-04-18 17:37:01,931 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=37,level=2,tokens=72), 37, 53, False
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=37,level=2,tokens=72), 37, 53, False
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=37,level=2,tokens=72), 37, 53, False
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=37,level=2,tokens=72), 37, 53, False
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=37,level=2,tokens=72), 37, 53, False
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=37,level=2,tokens=72), 37, 53, False
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=37,level=2,tokens=72), 37, 53, False
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.lheading | entering lheading: StateBlock(line=37,level=2,tokens=72), 37, 53, False
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=37,level=2,tokens=72), 38, 53, True
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=37,level=2,tokens=72), 38, 53, True
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=37,level=2,tokens=72), 38, 53, True
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=37,level=2,tokens=72), 38, 53, True
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.paragraph | entering paragraph: StateBlock(line=37,level=2,tokens=72), 37, 53, False
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=37,level=2,tokens=72), 38, 53, True
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=37,level=2,tokens=72), 38, 53, True
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=37,level=2,tokens=72), 38, 53, True
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=37,level=2,tokens=72), 38, 53, True
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=38,level=1,tokens=76), 38, 53, True
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=38,level=1,tokens=76), 38, 53, True
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=38,level=1,tokens=76), 38, 53, True
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=38,level=2,tokens=77), 38, 53, False
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=38,level=2,tokens=77), 38, 53, False
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=38,level=2,tokens=77), 38, 53, False
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=38,level=2,tokens=77), 38, 53, False
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=38,level=2,tokens=77), 38, 53, False
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=38,level=2,tokens=77), 38, 53, False
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=38,level=2,tokens=77), 38, 53, False
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=38,level=2,tokens=77), 38, 53, False
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.lheading | entering lheading: StateBlock(line=38,level=2,tokens=77), 38, 53, False
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=38,level=2,tokens=77), 39, 53, True
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=38,level=2,tokens=77), 39, 53, True
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=38,level=2,tokens=77), 39, 53, True
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=38,level=2,tokens=77), 39, 53, True
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.paragraph | entering paragraph: StateBlock(line=38,level=2,tokens=77), 38, 53, False
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=38,level=2,tokens=77), 39, 53, True
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=38,level=2,tokens=77), 39, 53, True
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=38,level=2,tokens=77), 39, 53, True
+2026-04-18 17:37:01,932 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=38,level=2,tokens=77), 39, 53, True
+2026-04-18 17:37:01,933 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=39,level=1,tokens=81), 39, 53, True
+2026-04-18 17:37:01,933 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=39,level=1,tokens=81), 39, 53, True
+2026-04-18 17:37:01,933 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=39,level=1,tokens=81), 39, 53, True
+2026-04-18 17:37:01,933 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=39,level=2,tokens=82), 39, 53, False
+2026-04-18 17:37:01,933 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=39,level=2,tokens=82), 39, 53, False
+2026-04-18 17:37:01,933 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=39,level=2,tokens=82), 39, 53, False
+2026-04-18 17:37:01,933 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=39,level=2,tokens=82), 39, 53, False
+2026-04-18 17:37:01,933 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=39,level=2,tokens=82), 39, 53, False
+2026-04-18 17:37:01,933 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=39,level=2,tokens=82), 39, 53, False
+2026-04-18 17:37:01,933 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=39,level=2,tokens=82), 39, 53, False
+2026-04-18 17:37:01,933 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=39,level=2,tokens=82), 39, 53, False
+2026-04-18 17:37:01,933 | DEBUG | markdown_it.rules_block.lheading | entering lheading: StateBlock(line=39,level=2,tokens=82), 39, 53, False
+2026-04-18 17:37:01,933 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=39,level=2,tokens=82), 40, 53, True
+2026-04-18 17:37:01,933 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=39,level=2,tokens=82), 40, 53, True
+2026-04-18 17:37:01,933 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=39,level=2,tokens=82), 40, 53, True
+2026-04-18 17:37:01,933 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=39,level=2,tokens=82), 40, 53, True
+2026-04-18 17:37:01,933 | DEBUG | markdown_it.rules_block.paragraph | entering paragraph: StateBlock(line=39,level=2,tokens=82), 39, 53, False
+2026-04-18 17:37:01,933 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=39,level=2,tokens=82), 40, 53, True
+2026-04-18 17:37:01,933 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=39,level=2,tokens=82), 40, 53, True
+2026-04-18 17:37:01,933 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=39,level=2,tokens=82), 40, 53, True
+2026-04-18 17:37:01,933 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=39,level=2,tokens=82), 40, 53, True
+2026-04-18 17:37:01,934 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=40,level=1,tokens=86), 40, 53, True
+2026-04-18 17:37:01,934 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=40,level=1,tokens=86), 40, 53, True
+2026-04-18 17:37:01,934 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=40,level=1,tokens=86), 40, 53, True
+2026-04-18 17:37:01,934 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=40,level=2,tokens=87), 40, 53, False
+2026-04-18 17:37:01,934 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=40,level=2,tokens=87), 40, 53, False
+2026-04-18 17:37:01,934 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=40,level=2,tokens=87), 40, 53, False
+2026-04-18 17:37:01,934 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=40,level=2,tokens=87), 40, 53, False
+2026-04-18 17:37:01,934 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=40,level=2,tokens=87), 40, 53, False
+2026-04-18 17:37:01,934 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=40,level=2,tokens=87), 40, 53, False
+2026-04-18 17:37:01,934 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=40,level=2,tokens=87), 40, 53, False
+2026-04-18 17:37:01,934 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=40,level=2,tokens=87), 40, 53, False
+2026-04-18 17:37:01,934 | DEBUG | markdown_it.rules_block.lheading | entering lheading: StateBlock(line=40,level=2,tokens=87), 40, 53, False
+2026-04-18 17:37:01,934 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=40,level=2,tokens=87), 41, 53, True
+2026-04-18 17:37:01,934 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=40,level=2,tokens=87), 41, 53, True
+2026-04-18 17:37:01,934 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=40,level=2,tokens=87), 41, 53, True
+2026-04-18 17:37:01,934 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=40,level=2,tokens=87), 41, 53, True
+2026-04-18 17:37:01,934 | DEBUG | markdown_it.rules_block.paragraph | entering paragraph: StateBlock(line=40,level=2,tokens=87), 40, 53, False
+2026-04-18 17:37:01,934 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=40,level=2,tokens=87), 41, 53, True
+2026-04-18 17:37:01,934 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=40,level=2,tokens=87), 41, 53, True
+2026-04-18 17:37:01,934 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=40,level=2,tokens=87), 41, 53, True
+2026-04-18 17:37:01,934 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=40,level=2,tokens=87), 41, 53, True
+2026-04-18 17:37:01,935 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=41,level=1,tokens=91), 41, 53, True
+2026-04-18 17:37:01,935 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=41,level=1,tokens=91), 41, 53, True
+2026-04-18 17:37:01,935 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=41,level=1,tokens=91), 41, 53, True
+2026-04-18 17:37:01,935 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=41,level=2,tokens=92), 41, 53, False
+2026-04-18 17:37:01,935 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=41,level=2,tokens=92), 41, 53, False
+2026-04-18 17:37:01,935 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=41,level=2,tokens=92), 41, 53, False
+2026-04-18 17:37:01,935 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=41,level=2,tokens=92), 41, 53, False
+2026-04-18 17:37:01,935 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=41,level=2,tokens=92), 41, 53, False
+2026-04-18 17:37:01,935 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=41,level=2,tokens=92), 41, 53, False
+2026-04-18 17:37:01,935 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=41,level=2,tokens=92), 41, 53, False
+2026-04-18 17:37:01,935 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=41,level=2,tokens=92), 41, 53, False
+2026-04-18 17:37:01,935 | DEBUG | markdown_it.rules_block.lheading | entering lheading: StateBlock(line=41,level=2,tokens=92), 41, 53, False
+2026-04-18 17:37:01,935 | DEBUG | markdown_it.rules_block.paragraph | entering paragraph: StateBlock(line=41,level=2,tokens=92), 41, 53, False
+2026-04-18 17:37:01,935 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=43,level=1,tokens=96), 43, 53, True
+2026-04-18 17:37:01,935 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=43,level=1,tokens=96), 43, 53, True
+2026-04-18 17:37:01,935 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=43,level=1,tokens=96), 43, 53, True
+2026-04-18 17:37:01,935 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=43,level=0,tokens=97), 43, 53, False
+2026-04-18 17:37:01,935 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=43,level=0,tokens=97), 43, 53, False
+2026-04-18 17:37:01,935 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=43,level=0,tokens=97), 43, 53, False
+2026-04-18 17:37:01,935 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=43,level=0,tokens=97), 43, 53, False
+2026-04-18 17:37:01,935 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=43,level=0,tokens=97), 43, 53, False
+2026-04-18 17:37:01,935 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=43,level=0,tokens=97), 43, 53, False
+2026-04-18 17:37:01,935 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=43,level=0,tokens=97), 43, 53, False
+2026-04-18 17:37:01,935 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=43,level=0,tokens=97), 43, 53, False
+2026-04-18 17:37:01,935 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=45,level=0,tokens=100), 45, 53, False
+2026-04-18 17:37:01,935 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=45,level=0,tokens=100), 45, 53, False
+2026-04-18 17:37:01,935 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=45,level=0,tokens=100), 45, 53, False
+2026-04-18 17:37:01,935 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=45,level=0,tokens=100), 45, 53, False
+2026-04-18 17:37:01,935 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=45,level=0,tokens=100), 45, 53, False
+2026-04-18 17:37:01,935 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=45,level=0,tokens=100), 45, 53, False
+2026-04-18 17:37:01,936 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=45,level=0,tokens=100), 45, 53, False
+2026-04-18 17:37:01,936 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=45,level=0,tokens=100), 45, 53, False
+2026-04-18 17:37:01,936 | DEBUG | markdown_it.rules_block.lheading | entering lheading: StateBlock(line=45,level=0,tokens=100), 45, 53, False
+2026-04-18 17:37:01,936 | DEBUG | markdown_it.rules_block.paragraph | entering paragraph: StateBlock(line=45,level=0,tokens=100), 45, 53, False
+2026-04-18 17:37:01,936 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=47,level=0,tokens=103), 47, 53, False
+2026-04-18 17:37:01,936 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=47,level=0,tokens=103), 47, 53, False
+2026-04-18 17:37:01,936 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=47,level=0,tokens=103), 47, 53, False
+2026-04-18 17:37:01,936 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=47,level=0,tokens=103), 47, 53, False
+2026-04-18 17:37:01,936 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=47,level=0,tokens=103), 47, 53, False
+2026-04-18 17:37:01,936 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=47,level=0,tokens=103), 47, 53, False
+2026-04-18 17:37:01,936 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=47,level=0,tokens=103), 47, 53, False
+2026-04-18 17:37:01,936 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=47,level=0,tokens=103), 47, 53, False
+2026-04-18 17:37:01,936 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=49,level=0,tokens=106), 49, 53, False
+2026-04-18 17:37:01,936 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=49,level=0,tokens=106), 49, 53, False
+2026-04-18 17:37:01,936 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=49,level=0,tokens=106), 49, 53, False
+2026-04-18 17:37:01,936 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=49,level=0,tokens=106), 49, 53, False
+2026-04-18 17:37:01,936 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=49,level=0,tokens=106), 49, 53, False
+2026-04-18 17:37:01,936 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=49,level=2,tokens=108), 49, 53, False
+2026-04-18 17:37:01,936 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=49,level=2,tokens=108), 49, 53, False
+2026-04-18 17:37:01,936 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=49,level=2,tokens=108), 49, 53, False
+2026-04-18 17:37:01,936 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=49,level=2,tokens=108), 49, 53, False
+2026-04-18 17:37:01,936 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=49,level=2,tokens=108), 49, 53, False
+2026-04-18 17:37:01,936 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=49,level=2,tokens=108), 49, 53, False
+2026-04-18 17:37:01,936 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=49,level=2,tokens=108), 49, 53, False
+2026-04-18 17:37:01,936 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=49,level=2,tokens=108), 49, 53, False
+2026-04-18 17:37:01,937 | DEBUG | markdown_it.rules_block.lheading | entering lheading: StateBlock(line=49,level=2,tokens=108), 49, 53, False
+2026-04-18 17:37:01,937 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=49,level=2,tokens=108), 50, 53, True
+2026-04-18 17:37:01,937 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=49,level=2,tokens=108), 50, 53, True
+2026-04-18 17:37:01,937 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=49,level=2,tokens=108), 50, 53, True
+2026-04-18 17:37:01,937 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=49,level=2,tokens=108), 50, 53, True
+2026-04-18 17:37:01,937 | DEBUG | markdown_it.rules_block.paragraph | entering paragraph: StateBlock(line=49,level=2,tokens=108), 49, 53, False
+2026-04-18 17:37:01,937 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=49,level=2,tokens=108), 50, 53, True
+2026-04-18 17:37:01,937 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=49,level=2,tokens=108), 50, 53, True
+2026-04-18 17:37:01,937 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=49,level=2,tokens=108), 50, 53, True
+2026-04-18 17:37:01,937 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=49,level=2,tokens=108), 50, 53, True
+2026-04-18 17:37:01,937 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=50,level=1,tokens=112), 50, 53, True
+2026-04-18 17:37:01,937 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=50,level=1,tokens=112), 50, 53, True
+2026-04-18 17:37:01,937 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=50,level=1,tokens=112), 50, 53, True
+2026-04-18 17:37:01,937 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=50,level=2,tokens=113), 50, 53, False
+2026-04-18 17:37:01,937 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=50,level=2,tokens=113), 50, 53, False
+2026-04-18 17:37:01,937 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=50,level=2,tokens=113), 50, 53, False
+2026-04-18 17:37:01,937 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=50,level=2,tokens=113), 50, 53, False
+2026-04-18 17:37:01,937 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=50,level=2,tokens=113), 50, 53, False
+2026-04-18 17:37:01,937 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=50,level=2,tokens=113), 50, 53, False
+2026-04-18 17:37:01,937 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=50,level=2,tokens=113), 50, 53, False
+2026-04-18 17:37:01,937 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=50,level=2,tokens=113), 50, 53, False
+2026-04-18 17:37:01,937 | DEBUG | markdown_it.rules_block.lheading | entering lheading: StateBlock(line=50,level=2,tokens=113), 50, 53, False
+2026-04-18 17:37:01,937 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=50,level=2,tokens=113), 51, 53, True
+2026-04-18 17:37:01,937 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=50,level=2,tokens=113), 51, 53, True
+2026-04-18 17:37:01,937 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=50,level=2,tokens=113), 51, 53, True
+2026-04-18 17:37:01,937 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=50,level=2,tokens=113), 51, 53, True
+2026-04-18 17:37:01,937 | DEBUG | markdown_it.rules_block.paragraph | entering paragraph: StateBlock(line=50,level=2,tokens=113), 50, 53, False
+2026-04-18 17:37:01,937 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=50,level=2,tokens=113), 51, 53, True
+2026-04-18 17:37:01,937 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=50,level=2,tokens=113), 51, 53, True
+2026-04-18 17:37:01,938 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=50,level=2,tokens=113), 51, 53, True
+2026-04-18 17:37:01,938 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=50,level=2,tokens=113), 51, 53, True
+2026-04-18 17:37:01,938 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=51,level=1,tokens=117), 51, 53, True
+2026-04-18 17:37:01,938 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=51,level=1,tokens=117), 51, 53, True
+2026-04-18 17:37:01,938 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=51,level=1,tokens=117), 51, 53, True
+2026-04-18 17:37:01,938 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=51,level=2,tokens=118), 51, 53, False
+2026-04-18 17:37:01,938 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=51,level=2,tokens=118), 51, 53, False
+2026-04-18 17:37:01,938 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=51,level=2,tokens=118), 51, 53, False
+2026-04-18 17:37:01,938 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=51,level=2,tokens=118), 51, 53, False
+2026-04-18 17:37:01,938 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=51,level=2,tokens=118), 51, 53, False
+2026-04-18 17:37:01,938 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=51,level=2,tokens=118), 51, 53, False
+2026-04-18 17:37:01,938 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=51,level=2,tokens=118), 51, 53, False
+2026-04-18 17:37:01,938 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=51,level=2,tokens=118), 51, 53, False
+2026-04-18 17:37:01,938 | DEBUG | markdown_it.rules_block.lheading | entering lheading: StateBlock(line=51,level=2,tokens=118), 51, 53, False
+2026-04-18 17:37:01,938 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=51,level=2,tokens=118), 52, 53, True
+2026-04-18 17:37:01,938 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=51,level=2,tokens=118), 52, 53, True
+2026-04-18 17:37:01,938 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=51,level=2,tokens=118), 52, 53, True
+2026-04-18 17:37:01,938 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=51,level=2,tokens=118), 52, 53, True
+2026-04-18 17:37:01,938 | DEBUG | markdown_it.rules_block.paragraph | entering paragraph: StateBlock(line=51,level=2,tokens=118), 51, 53, False
+2026-04-18 17:37:01,938 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=51,level=2,tokens=118), 52, 53, True
+2026-04-18 17:37:01,938 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=51,level=2,tokens=118), 52, 53, True
+2026-04-18 17:37:01,938 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=51,level=2,tokens=118), 52, 53, True
+2026-04-18 17:37:01,938 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=51,level=2,tokens=118), 52, 53, True
+2026-04-18 17:37:01,939 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=52,level=1,tokens=122), 52, 53, True
+2026-04-18 17:37:01,939 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=52,level=1,tokens=122), 52, 53, True
+2026-04-18 17:37:01,939 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=52,level=1,tokens=122), 52, 53, True
+2026-04-18 17:37:01,939 | DEBUG | markdown_it.rules_block.code | entering code: StateBlock(line=52,level=2,tokens=123), 52, 53, False
+2026-04-18 17:37:01,939 | DEBUG | markdown_it.rules_block.fence | entering fence: StateBlock(line=52,level=2,tokens=123), 52, 53, False
+2026-04-18 17:37:01,939 | DEBUG | markdown_it.rules_block.blockquote | entering blockquote: StateBlock(line=52,level=2,tokens=123), 52, 53, False
+2026-04-18 17:37:01,939 | DEBUG | markdown_it.rules_block.hr | entering hr: StateBlock(line=52,level=2,tokens=123), 52, 53, False
+2026-04-18 17:37:01,939 | DEBUG | markdown_it.rules_block.list | entering list: StateBlock(line=52,level=2,tokens=123), 52, 53, False
+2026-04-18 17:37:01,939 | DEBUG | markdown_it.rules_block.reference | entering reference: StateBlock(line=52,level=2,tokens=123), 52, 53, False
+2026-04-18 17:37:01,939 | DEBUG | markdown_it.rules_block.html_block | entering html_block: StateBlock(line=52,level=2,tokens=123), 52, 53, False
+2026-04-18 17:37:01,939 | DEBUG | markdown_it.rules_block.heading | entering heading: StateBlock(line=52,level=2,tokens=123), 52, 53, False
+2026-04-18 17:37:01,939 | DEBUG | markdown_it.rules_block.lheading | entering lheading: StateBlock(line=52,level=2,tokens=123), 52, 53, False
+2026-04-18 17:37:01,939 | DEBUG | markdown_it.rules_block.paragraph | entering paragraph: StateBlock(line=52,level=2,tokens=123), 52, 53, False
+2026-04-18 17:37:01,977 | INFO | Request | Research complete. Report: 5688 chars, Iterations: 2
+2026-04-18 17:37:41,657 | DEBUG | httpcore.connection | close.started
+2026-04-18 17:37:41,657 | DEBUG | httpcore.connection | close.complete
+2026-04-18 17:37:41,660 | DEBUG | httpcore.connection | close.started
+2026-04-18 17:37:41,660 | DEBUG | httpcore.connection | close.complete
+2026-04-18 17:37:41,662 | DEBUG | httpcore.connection | close.started
+2026-04-18 17:37:41,663 | DEBUG | httpcore.connection | close.complete
+2026-04-18 17:37:41,667 | DEBUG | httpcore.connection | close.started
+2026-04-18 17:37:41,667 | DEBUG | httpcore.connection | close.complete
+2026-04-18 17:37:46,354 | DEBUG | chromadb.config | Starting component System
+2026-04-18 17:37:46,354 | DEBUG | chromadb.config | Starting component Posthog
