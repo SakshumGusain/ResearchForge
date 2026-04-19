@@ -11,13 +11,35 @@ embedding_model = GoogleGenerativeAIEmbeddings(model=settings.gemini_embedding_m
 def add_documents(chunks: List[Dict[str, Any]]):
     """Takes a list of text chunks and store them with their embeddings"""
     
-    texts = [chunk['data'] for chunk in chunks]
-    metadatas = [chunk['metadata'] for chunk in chunks]
+    # Filter out empty/whitespace-only chunks
+    valid_chunks = [chunk for chunk in chunks if chunk['data'].strip()]
+    if not valid_chunks:
+        return
     
-    embeddings = embedding_model.embed_documents(texts)
-    ids = [hashlib.md5(text.encode()).hexdigest() for text in texts]
-    collection.add(ids=ids, embeddings=embeddings, documents=texts, metadatas=metadatas)
+    texts = [chunk['data'] for chunk in valid_chunks]
+    metadatas = [chunk['metadata'] for chunk in valid_chunks]
+    
+    ids = [hashlib.md5(f"{text}_{i}".encode()).hexdigest() for i, text in enumerate(texts)]
+    
+    # Deduplicate before embedding to avoid wasted API calls
+    seen = {}
+    unique_ids, unique_texts, unique_metadatas = [], [], []
+    for idx, doc_id in enumerate(ids):
+        if doc_id not in seen:
+            seen[doc_id] = True
+            unique_ids.append(doc_id)
+            unique_texts.append(texts[idx])
+            unique_metadatas.append(metadatas[idx])
+    
+    all_embeddings = [embedding_model.embed_query(text) for text in unique_texts]
+    
+    if len(all_embeddings) != len(unique_ids):
+        raise ValueError(
+            f"Embedding count mismatch: got {len(all_embeddings)} embeddings for {len(unique_ids)} documents. "
+            f"Check if the embedding model '{settings.gemini_embedding_model}' supports batch embedding."
+        )
 
+    collection.add(ids=unique_ids, embeddings=all_embeddings, documents=unique_texts, metadatas=unique_metadatas)
 
 def similarity_search(query, k=5):
     """Takes a query string converts that into embedding and find k most similar document chunks, and returns them"""
